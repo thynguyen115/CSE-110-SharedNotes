@@ -2,6 +2,7 @@ package edu.ucsd.cse110.sharednotes.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 import java.util.List;
@@ -79,22 +80,28 @@ public class NoteRepository {
     // ==============
 
     public LiveData<Note> getRemote(String title) {
-        // TODO: Implement getRemote!
-        // TODO: Set up polling background thread (MutableLiveData?)
-        // TODO: Refer to TimerService from https://github.com/DylanLukes/CSE-110-WI23-Demo5-V2.
+        // PAST_TODO Implement getRemote!
+        // PAST_TODO Set up polling background thread (MutableLiveData?)
+        // PAST_TODO: Refer to TimerService from https://github.com/DylanLukes/CSE-110-WI23-Demo5-V2.
 
         // Start by fetching the note from the server _once_ and feeding it into MutableLiveData.
+        //MutableLiveData<Note> data = (MutableLiveData<Note>) dao.get("_once_");
+        LiveData<Note> data = dao.get("_once_");
+
         // Then, set up a background thread that will poll the server every 3 seconds.
+        data.getValue();
 
         // You may (but don't have to) want to cache the LiveData's for each title, so that
         // you don't create a new polling thread every time you call getRemote with the same title.
         // You don't need to worry about killing background threads.
 
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
+        return data;
     }
 
     public void upsertRemote(Note note) {
-        // TODO: Implement upsertRemote!
-        throw new UnsupportedOperationException("Not implemented yet");
+        // PAST_TODO: Implement upsertRemote!
+        // throw new UnsupportedOperationException("Not implemented yet");
+        dao.upsert(note);
     }
 }

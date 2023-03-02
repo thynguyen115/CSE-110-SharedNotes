@@ -8,9 +8,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 public class NoteAPI {
-    // TODO: Implement the API using OkHttp!
-    // TODO: Read the docs: https://square.github.io/okhttp/
-    // TODO: Read the docs: https://sharednotes.goto.ucsd.edu/docs
+    // PAST_TODO Implement the API using OkHttp!
+    // PAST_TODO Read the docs: https://square.github.io/okhttp/
+    // PAST_TODO Read the docs: https://sharednotes.goto.ucsd.edu/docs
 
     private volatile static NoteAPI instance = null;
 
